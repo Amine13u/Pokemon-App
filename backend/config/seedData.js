@@ -12,12 +12,12 @@ const pokemonURL =
 const seedData = async () => {
   const res = await axios.get(pokemonURL);
 
-  const pokemons = res.data.pokemon.map((e) => ({
-    name: e.name,
-    img: e.img,
-    type: e.type,
-    spawnChance: e.spawn_chance,
-    weaknesses: e.weaknesses,
+  const pokemons = res.data.pokemon.map((pokemon) => ({
+    name: pokemon.name,
+    img: pokemon.img,
+    type: pokemon.type,
+    spawnChance: pokemon.spawn_chance,
+    weaknesses: pokemon.weaknesses,
   }));
 
   await Pokemon.deleteMany({});
