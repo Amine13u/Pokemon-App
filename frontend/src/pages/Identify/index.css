@@ -15,24 +15,6 @@ input {
   margin-right: 10px;
 }
 
-button {
-  background-color: #ff6f61;
-  color: white;
-  border: none;
-  margin: 0 5px;
-  border-radius: 15px;
-  width: 100px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ff6e61cc;
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
 .list {
   display: flex;
   flex-wrap: wrap;

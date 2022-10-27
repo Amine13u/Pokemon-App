@@ -9,13 +9,15 @@ function Identify() {
 
   const getPokemonList = async (description) => {
     try {
-      setPokemonList([]);
-      const { data } = await axios.get(
-        `/api/${description}/${
-          pokemonType[0].toUpperCase() + pokemonType.slice(1)
-        }`
-      );
-      setPokemonList(data);
+      if (pokemonType) {
+        setPokemonList([]);
+        const { data } = await axios.get(
+          `/api/${description}/${
+            pokemonType[0].toUpperCase() + pokemonType.slice(1)
+          }`
+        );
+        setPokemonList(data);
+      }
     } catch (error) {
       console.error(error);
     }
