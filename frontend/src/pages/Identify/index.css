@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  margin-top: 10px;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  background-color: rgb(240, 230, 230);
+  border: 1px solid #ff6f61;
+  border-radius: 5px;
+  width: 250px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  margin: 0 5px;
+  border-radius: 15px;
+  width: 100px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff6e61cc;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.item {
+  margin-bottom: 50px;
+}
