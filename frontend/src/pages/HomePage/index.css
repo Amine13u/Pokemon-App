@@ -26,8 +26,15 @@
   text-align: center;
   border-radius: 5px;
   padding: 5px 0;
+  cursor: pointer;
 }
 
 .pokemon:hover {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

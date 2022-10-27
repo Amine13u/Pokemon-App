@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import PokemonCard from "../../components/PokemonCard";
 import "./index.css";
 
 function HomePage() {
   const [pokemonList, setPokemonList] = useState([]);
+  const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
     getPokemonList();
-  }, [pokemonList]);
+  }, []);
 
   const getPokemonList = async () => {
     try {
@@ -18,14 +20,27 @@ function HomePage() {
     }
   };
 
+  const handleClick = async (pokemonName) => {
+    const { data } = await axios.get(`/api/${pokemonName}`);
+    setPokemon(data);
+  };
+
   return (
     <div className="home-page">
-      <div className="left"></div>
+      <div className="left">
+        <PokemonCard pokemon={pokemon} />
+      </div>
       <div className=" right">
         <ul>
           {pokemonList &&
-            pokemonList.map((pokemon) => (
-              <li className="pokemon">{pokemon}</li>
+            pokemonList.map((pokemonName) => (
+              <li
+                className="pokemon"
+                key={pokemonName}
+                onClick={() => handleClick(pokemonName)}
+              >
+                {pokemonName}
+              </li>
             ))}
         </ul>
       </div>
